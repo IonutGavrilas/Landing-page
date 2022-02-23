@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,100&display=swap');
+@import "variables";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    // box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-background {
+    height: 750px;
+    background: $primary-color url(fireworks.jpg);
+    background-size: cover;
+    color: $primary-color;
+    .top {
+        animation: fadeIn 2s forwards;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-2em);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+                
+            
+        }
+    }  
+    section {
+        margin: 0 1em;
+        a {
+            color: $secondary-color;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 2.2rem;
+            margin-left: 12rem;
+        }
+        header {
+            padding: 1em 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 2em 5em 1.2em;
+            color: $secondary-color2;
+            span {
+                text-transform: uppercase;
+                display: block;
+                font-size: 1.4em;
+                position: relative;
+                z-index: 1;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 3em;
+                    background-color: $secondary-color;
+                    height: 0.4em;
+                    bottom: 0;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+    .lorem1 {
+        font-weight: bold;
+        margin: 0 12em 3em;
+        max-width: 45em;
+    }
+    .form-container {
+        background-color: $primary-color;
+        font-weight: bold;
+        padding: 2em;
+        max-width: 50em;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px $secondary-color;
+        margin-left: 12em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            label {
+                color: $secondary-color;
+            }
+            .hint {
+                display: none;
+            }
+            input[type=text] {
+                border: 1px solid $secondary-color;
+                width: 100%;
+                padding: 1em;
+                border-radius: 10px;
+                margin-top: 1.2em;
+            }
+        }
+        
+    }
+    input[type=button] {
+        background-color: $secondary-color2;
+        border: none;
+        border-radius: 0.5em;
+        color: $primary-color;
+        padding: 1em 0;
+        width: 30%;
+        font-size: 1.3em;
+        height: 3em;
+        margin-left: 3em;
+        &:hover {
+            background-color: $secondary-color;
+            color: $secondary-color2;
+        }
+    }
+}
+
+.call-to-action {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    .call-to-action-message {
+        padding: 5em;
+        text-align: center;
+        // margin-top: 150px;
+        h2 {
+            text-transform: uppercase;
+            position: relative;
+            color: $secondary-color2;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 7em;
+                background-color: $secondary-color;
+                height: 0.4em;
+                bottom: 0;
+                z-index: -1;
+                left: 0.5em;
+            }
+        }
+        
+        p {
+            font-size: 1.4em;
+            left: 0.5em;
+        }
+    }
+    .call-to-action-image {
+        margin: 100px;
+        height: 500px;
+        width: 500px;
+        border-radius: 5%;
+    }
+}
+
+@media (max-width: 750px) {
+    .main-background {
+        height: auto;
+        width: auto;
+        h1 {
+            margin: 1em 2em 1.2em;
+        }
+        .lorem1 {
+            margin: 0 5em 3em;
+        }
+        .form-container {
+            flex-direction: column;
+            margin-left: 0;
+            input[type=button] {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+    
+    .call-to-action {
+        flex-direction: column;
+    }
+    
+}
